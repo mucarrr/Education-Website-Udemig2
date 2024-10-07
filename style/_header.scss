@@ -1,0 +1,67 @@
+@import "./variables";
+@import "./global";
+@import "./mixin";
+
+header{
+    @include tablet(){
+        justify-content: center;
+    }
+    background-color: $bg-color;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 20px 17px;
+    z-index: 1000;
+    @extend .flex;
+    justify-content: space-between;
+    a{
+        font-size: 30px;
+        color: $text-color;
+        font-weight: 700;
+        span{
+            color: $main-color;
+        }
+    }
+    ul{
+        @extend .flex;
+        justify-content: space-between;
+        gap: 10px;
+        a{
+            color: $text-color;
+            font-size: $p-font;
+            font-weight: 500;
+            padding: 15px 22px;
+            @extend .transition;
+            &:hover{
+                color: $main-color;
+            }
+        } 
+        li{
+            @include laptop(){
+                display: none;
+            }
+        }
+    }
+    .social{
+        @extend .flex;
+        a{
+            @include tablet(){
+                display: none;
+            }
+            font-size: 20px;
+            color: $text-color;
+            margin-right: 18px;
+            margin-left: 5px;
+            @extend .transition;
+            &:hover{
+                color: $main-color;
+                transform: translateY(-3px);
+            }
+        }
+        a:nth-child(1) {
+            font-size: $p-font;
+            margin-right: 20px;
+        }
+
+    }
+}
